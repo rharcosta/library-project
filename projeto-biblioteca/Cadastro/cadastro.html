@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
 </head>
+
 <body>
     <h1>Cadastrar Novo Usuário</h1>
-    <form>
+    <form name="form">
         <div>
             <table>
                 <tr>
-                    <td>Nome completo: </td>
+                    <td>Nome Completo: </td>
                     <td><input type="text" name="nome"></td>
                 </tr>
                 <tr>
                     <td>E-mail: </td>
-                    <td><input type="email" name="email"></td>
+                    <td><input type="text" name="email"></td>
                 </tr>
                 <tr>
-                    <td>Data de nascimento: </td>
+                    <td>Data de Nascimento: </td>
                     <td><input type="date" name="nascimento"></td>
                 </tr>
                 <tr>
@@ -48,8 +50,15 @@
                     <td><input type="text" name="celular"></td>
                 </tr>
                 <tr>
-                    <td>Número de cadastro: </td>
-                    <td><input type="text" name="numcadastro"></td>
+                    <td>É funcionário?</td>
+                    <td>
+                        <input type="radio" name="funcionario" value="sim"><label> Sim </label>
+                        <input type="radio" name="funcionario" value="nao" checked><label> Não </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Número de Cadastro: </td>
+                    <td><input type="text" name="numcadastro" disabled></td>
                 </tr>
                 <tr>
                     <td>RA: </td>
@@ -60,13 +69,18 @@
                     <td><input type="text" name="senha"></td>
                 </tr>
                 <tr>
-                    <td>Confirmar senha: </td>
+                    <td>Confirmar Senha: </td>
                     <td><input type="password" name="confsenha"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="Limpar()">Limpar</button>
+                    <button onclick="Cadastrar()">Cadastrar</button></td>
                 </tr>
             </table>
         </div>
         <br><br>
-        <button onclick="Cadastrar()">Cadastrar</button>
     </form>
 </body>
+
 </html>

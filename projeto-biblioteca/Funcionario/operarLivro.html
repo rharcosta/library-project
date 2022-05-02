@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operar Livro</title>
+</head>
+
+<body>
+    <h1>Deletar / Salvar / Buscar Livro</h1>
+    <form name="form">
+        <div>
+            <table>
+                <tr>
+                    <td>Nome: </td>
+                    <td><input type="text" name="nome"></td>
+                </tr>
+                <tr>
+                    <td>Autor: </td>
+                    <td><input type="text" name="autor"></td>
+                </tr>
+                <tr>
+                    <td>Gênero: </td>
+                    <td>
+                        <select name="generos">
+                            <option value="aventura">Ação e Aventura</option><br>
+                            <option value="ficcao">Ficção</option><br>
+                            <option value="infantil">Infantil</option><br>
+                            <option value="romance">Romance</option><br>
+                            <option value="negocios">Negócios</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Número de Cadastro: </td>
+                    <td><input type="text" name="numcadastro" disabled></td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <button onclick="Deletar()">Deletar</button>
+        <button onclick="Salvar()">Salvar</button>
+        <button onclick="Buscar()">Buscar</button>
+    </form>
+</body>
+
+</html>
