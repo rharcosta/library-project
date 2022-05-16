@@ -7,48 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
     <link href="../Estilos/principal.css" rel="stylesheet">
+    <script src='./scriptCadastro.js'></script>
 </head>
 
 <body>
     <h1>Cadastrar Novo Usuário</h1>
-    <form name="form">
+    <form name="form" id="form" action="/action_page.php" method="post">
         <div>
             <table>
                 <tr>
                     <td>Nome Completo: </td>
-                    <td><input type="text" name="nome"></td>
+                    <td><input type="text" class="nome" pattern="([aA-zZ]+)" placeholder="Apenas letras" required></td>
                 </tr>
                 <tr>
                     <td>E-mail: </td>
-                    <td><input type="text" name="email"></td>
+                    <td><input type="email" id="email" placeholder="fulano@gmail.com" required></td>
                 </tr>
                 <tr>
                     <td>Data de Nascimento: </td>
-                    <td><input type="date" name="nascimento"></td>
+                    <td><input type="date" name="nascimento" id="nascimento" placeholder="dd/mm/aaaa" required></td>
                 </tr>
                 <tr>
                     <td>Registro Geral (RG): </td>
-                    <td><input type="text" name="rg"></td>
+                    <td><input type="text" id="rg" placeholder="Apenas números" required></td>
                 </tr>
                 <tr>
                     <td>CPF: </td>
-                    <td><input type="text" name="cpf"></td>
+                    <td><input type="text" id="cpf" placeholder="Apenas números" required></td>
                 </tr>
                 <tr>
                     <td>CEP: </td>
-                    <td><input type="text" name="cep"></td>
+                    <td><input type="text" name="cep" id="cep"></td>
                 </tr>
                 <tr>
                     <td>Rua: </td>
-                    <td><input type="text" name="rua"></td>
+                    <td><input type="text" name="rua" id="rua"></td>
                 </tr>
                 <tr>
                     <td>Número: </td>
-                    <td><input type="text" name="numero"></td>
+                    <td><input type="text" name="numero" id="num"></td>
                 </tr>
                 <tr>
                     <td>Celular: </td>
-                    <td><input type="text" name="celular"></td>
+                    <td><input type="text" name="celular" id="celular"></td>
                 </tr>
                 <tr>
                     <td>É funcionário?</td>
@@ -58,20 +59,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Número de Cadastro: </td>
-                    <td><input type="text" name="numcadastro" disabled></td>
-                </tr>
-                <tr>
-                    <td>RA: </td>
-                    <td><input type="text" name="ra"></td>
+                    <td>Número de identificação: </td>
+                    <td><input type="text" name="ra" id="ra"></td>
                 </tr>
                 <tr>
                     <td>Senha: </td>
-                    <td><input type="text" name="senha"></td>
+                    <td><input type="text" name="senha" id="senha" placeholder="Senha com 10 ou mais caracteres "></td>
                 </tr>
                 <tr>
-                    <td>Confirmar Senha: </td>
-                    <td><input type="password" name="confsenha"></td>
+                    <td>Confirmação de senha: </td>
+                    <td><input type="password" name="confsenha" id="confsenha"></td>
                 </tr>
                 <tr>
                     <td></td>
