@@ -4,20 +4,23 @@ font-size: 20px;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 text-align: center;
 display: inline-block;
-position: relative;
+position: center;
 
 }
 
 html{
 
     background-color: white;
+    background-image: url(../Estilos/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: 1600px 500px;
 
 }
 
 body{
 
     width: 600px;
-    margin: 0 auto;
+    margin: auto auto;
     background-color: aliceblue;
     padding: 0 20px 20px 20px;
     border: 5px solid aliceblue;
