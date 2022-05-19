@@ -1,0 +1,30 @@
+html, button, form{
+
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    display: inline-block;
+    position: center;
+    
+    }
+    
+    
+    body{
+    
+        background-image: url(../Estilos/fundo.jpg);
+        background-repeat: no-repeat;
+        background-size: 1600px 800px;
+    
+    
+    }
+    
+    #box{
+        width: 30%;
+        float: center;
+        margin-left: 34%;
+        margin-top: 15%;
+        border: 5px solid aliceblue;
+        box-shadow: 3px 3px 1px gray;
+        background-color: aliceblue;
+    
+    }

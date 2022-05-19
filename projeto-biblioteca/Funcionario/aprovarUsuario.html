@@ -6,62 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprovar usuários</title>
-    <!--<link href="../Estilos/principal.css" rel="stylesheet">-->
+    <link href="funcionario.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Aprovar ou suspender usuários</h1>
-    <form name="form">
-        <div>
-            <table>
-                <tr>
-                    <td>Usuários para aprovação: </td>
-                    <td>
-                        <select name="usuarios">
-                            <option value="livia">Lívia</option><br>
-                            <option value="rubia">Rubia</option><br>
-                        </select>
-                        <select name="aprovar/negar">
-                            <option value="aprovar">Aprovar</option><br>
-                            <option value="negar">Negar</option><br>
-                        </select>
-                    </td>
-                    <td><button onclick="Confirmar()">Confirmar</button></td>
-                </tr>
-                <tr>
-                    <td>Entregas atrasadas: </td>
-                    <td>
-                        <select name="usuarios">
-                            <option value="livia">Lívia</option><br>
-                            <option value="rubia">Rubia</option><br>
-                        </select>
-                        <select name="tempo">
-                            <option value="umdia">1 dia</option><br>
-                            <option value="umasemana">1 semana</option><br>
-                            <option value="ummes">1 mês</option><br>
-                            <option value="indeterminado">Indeterminado</option><br>
-                        </select>
-                    </td>
-                    <td><button onclick="Suspender()">Suspender usuário</button></td>
-                    <td><button onclick="SupenderTodos()">Suspender todos os usuários</button></td>
-                </tr>
-                <tr>
-                    <td>Remover suspensão: </td>
-                    <td>
-                        <select name="usuarios">
-                            <option value="livia">Lívia</option><br>
-                            <option value="rubia">Rubia</option><br>
-                        </select>
-                    </td>
-                    <td><button onclick="RmSuspender()">Remover</button></td>
-                </tr>
-                <tr>
-                    <td>Número de Cadastro: </td>
-                    <td><input type="text" name="numcadastro" disabled></td>
-                </tr>
-            </table>
-        </div>
-    </form>
+    <div id = "box">
+        <h1>Aprovar ou suspender usuários</h1>
+            <form name="form">
+                <div>
+                    <table>
+                        <tr>
+                            <td>Usuários para aprovação: </td>
+                            <td>
+                                <select name="usuarios">
+                                    <option value="livia">Lívia</option><br>
+                                    <option value="rubia">Rubia</option><br>
+                                </select>
+                                <select name="aprovar/negar">
+                                    <option value="aprovar">Aprovar</option><br>
+                                    <option value="negar">Negar</option><br>
+                                </select>
+                            </td>
+                            <td><button onclick="Confirmar()">Confirmar</button></td>
+                        </tr>
+                        <tr>
+                            <td>Entregas atrasadas: </td>
+                            <td>
+                                <select name="usuarios">
+                                    <option value="livia">Lívia</option><br>
+                                    <option value="rubia">Rubia</option><br>
+                                </select>
+                                <select name="tempo">
+                                    <option value="umdia">1 dia</option><br>
+                                    <option value="umasemana">1 semana</option><br>
+                                    <option value="ummes">1 mês</option><br>
+                                    <option value="indeterminado">Indeterminado</option><br>
+                                </select>
+                            </td>
+                            <td><button onclick="Suspender()">Suspender usuário</button></td>
+                            <td><button onclick="SupenderTodos()">Suspender todos os usuários</button></td>
+                        </tr>
+                        <tr>
+                            <td>Remover suspensão: </td>
+                            <td>
+                                <select name="usuarios">
+                                    <option value="livia">Lívia</option><br>
+                                    <option value="rubia">Rubia</option><br>
+                                </select>
+                            </td>
+                            <td><button onclick="RmSuspender()">Remover</button></td>
+                        </tr>
+                        <tr>
+                            <td>Número de Cadastro: </td>
+                            <td><input type="text" name="numcadastro" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+    </div>
 </body>
 
 </html>
