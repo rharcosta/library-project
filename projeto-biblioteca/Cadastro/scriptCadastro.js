@@ -1,7 +1,6 @@
   const formulario = document.getElementById('form');
   const nome = formulario.elements['nome'].value;
   const email = formulario.elements['email'].value;
-  const nascimento = formulario.elements['nascimento'].value;
   const rg = formulario.elements['rg'].value;
   const cpf = formulario.elements['cpf'].value;
   const cep = formulario.elements['cep'].value;
@@ -14,87 +13,54 @@
   const confsenha = formulario.elements['confsenha'].value;
   const ano = ra.substring(0, 4);
 
-  //Validar nome
- class Nome{
-    let inputNome = document.querySelector("nome");
-    inputNome.addEventListener("keydown", function (e) {
-      if (e.key > "0" && e.key < "9") {
-        e.preventDefault();
-      }
-    });
-  }
-
-
   function Cadastrar() {
     if (ra.length == 9 && Number.isInteger(parseInt(ra))) {
       if (1999 <= parseInt(ano) && parseInt(ano) <= 2021) {
-        if (validarCampos()) {
-          if (separarNome(nome)) {
-            if (email.includes("@")) {
-              if (senha.length >= 10) {
-                var dados = {
-                  'Nome': nome,
-                  'Email': email,
-                  'Data de Nascimento': nascimento,
-                  'RG': rg,
-                  'CPF': cpf,
-                  'CEP': cep,
-                  'Rua': rua,
-                  'Número': num,
-                  'Celular': celular,
-                  'Número de Identificação': ra,
-                  'Senha': senha,
-                  'Confirmação de senha': confsenha,
-                };
-                console.log(JSON.stringify(dados));
-                alert("Dados enviados com sucesso!")
-                Limpar();
-              } else {
-                alert("Por favor insira uma senha com 10 ou mais caracteres.");
-              }
-            } else {
-              alert("Por favor insira um e-mail válido.");
-            }
-          } else {
-            alert("Por favor insira seu nome completo.");
-          }
+        if (senha.length >= 10) {
+          var dados = {
+            'Nome': nome,
+            'Email': email,
+            'Data de Nascimento': nascimento,
+            'RG': rg,
+            'CPF': cpf,
+            'CEP': cep,
+            'Rua': rua,
+            'Número': num,
+            'Celular': celular,
+            'Número de Identificação': ra,
+            'Senha': senha,
+            'Confirmação de senha': confsenha,
+          };
+          console.log(JSON.stringify(dados));
+          alert("Dados enviados com sucesso!")
+          Limpar();
         } else {
-          alert("Por favor preencha todos os campos do formulário.");
-        }
-      } else {
-        alert("Por favor cheque se os 4 primeiros dígitos do seu RA estão entre 1999 e 2021.");
-      }
-    } else {
-      alert("Por favor cheque se seu RA possui 9 caracteres numéricos.");
-    }
-  }
-
-  function validarCampos() {
-    var formulario = document.getElementById('form');
-
-    for (i = 0; i < formulario.length; i++) {
-      if (formulario[i].type == 'text') {
-        if (formulario[i].value == '') {
-          return false;
+          alert("Por favor insira uma senha com 10 ou mais caracteres.");
+        } else {
+          alert("Por favor cheque se os 4 primeiros dígitos do seu RA estão entre 1999 e 2021.");
+        } else {
+          alert("Por favor cheque se seu RA possui 9 caracteres numéricos.");
         }
       }
     }
-    return true;
   }
 
-  function separarNome(nome) {
-
-    var nomeSeparado = nome.split(" ");
-
-    if (nomeSeparado.length >= 2) {
-      return true;
-    } else {
-      return false;
+  function apenasNumeros() {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode(key);
+    var regex = /^[0-9.]+$/;
+    if (!regex.test(key)) {
+      theEvent.returnValue = false;
+      if (theEvent.preventDefault) theEvent.preventDefault();
     }
   }
 
   function Limpar() {
-    document.getElementById("form").reset();
+    //document.getElementById("form").reset();
+    $('form').submit(function () {
+      $(this)[0].reset();
+    });
   }
 
   function validarCPF(cpf) {
@@ -134,4 +100,25 @@
     return true;
   }
 
-  function Funcionario() {}
+  function validaData() {
+    var data = document.getElementById("nascimento").value; // pega o valor do input
+    data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+    var data_array = data.split("-"); // quebra a data em array
+
+    // para o IE onde será inserido no formato dd/MM/yyyy
+    if (data_array[0].length != 4) {
+      data = data_array[2] + "-" + data_array[1] + "-" + data_array[0]; // remonto a data no formato yyyy/MM/dd
+    }
+
+    // comparo as datas e calculo a idade
+    var hoje = new Date();
+    var nasc = new Date(data);
+    var idade = hoje.getFullYear() - nasc.getFullYear();
+    var m = hoje.getMonth() - nasc.getMonth();
+    if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
+
+    if (idade < 18) {
+      alert("Pessoas menores de 18 não podem se cadastrar.");
+      return false;
+    }
+  }
