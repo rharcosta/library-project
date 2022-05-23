@@ -8,13 +8,23 @@ html, button, form{
 
 }
 
+h1{
+    text-align: center;
+}
+
+#left{
+    text-align: left;
+}
+
 
 body{
-
-    background-image: url(../Estilos/fundo.jpg);
+    
+    /*background-image: url(../Estilos/fundo.jpg);
     background-repeat: no-repeat;
-    background-size: 1600px 800px;
+    background-size: 1600px 800px;*/
 
+    background-color: #003B5C;
+    
 }
 
 #box{
@@ -26,5 +36,6 @@ body{
     border: 5px solid aliceblue;
     box-shadow: 3px 3px 1px gray;
     background-color: aliceblue;
+    border-radius: 20px;
 
 }
