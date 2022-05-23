@@ -8,20 +8,13 @@ html, button, form{
     
 }
 
-<<<<<<< HEAD
 button{
     background-color: white;
     color: black;
     border: 2px solid #003B5C;
     border-radius: 10px;
 }
-    
-body{
-    
-    background-repeat: no-repeat;
-    background-size: 1600px 800px;
-    background-color: #003B5C;
-=======
+
 h1{
     text-align: center;
 }
@@ -39,7 +32,6 @@ body{
 
     background-color: #003B5C;
     
->>>>>>> 73da335a8918893b6c32c37ab58cb07d4807d49b
 }
     
 #box{
