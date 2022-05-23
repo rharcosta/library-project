@@ -18,11 +18,11 @@ body{
 }
     
 #box{
-    
+
     width: 30%;
     float: center;
     margin-left: 34%;
-    margin-top: 10%;
+    margin-top: 15%;
     border: 20px solid aliceblue;
     box-shadow: 3px 3px 1px gray;
     background-color: aliceblue;
